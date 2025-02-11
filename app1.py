@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
@@ -51,6 +50,3 @@ seats = st.number_input('Seats', min_value=int(df['Seats'].min()), max_value=int
 if st.button('Predict'):
     prediction = model.predict([[year, kilometers_driven, engine, power, seats]])
     st.write(f'Predicted Price: {prediction[0]}')
-
-import sklearn
-print(sklearn.__version__)
